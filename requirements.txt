@@ -1,4 +1,4 @@
 pycoingecko
 plotly
 kaleido
-python - dotenv
+python-dotenv
