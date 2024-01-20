@@ -1,6 +1,6 @@
 import os
 import plotly.graph_objects as go
-from utils import ensure_tmp_folder_exists
+from utils.utils import ensure_tmp_folder_exists
 
 
 class CryptoChart:

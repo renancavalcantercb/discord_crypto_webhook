@@ -1,8 +1,8 @@
 from dotenv import load_dotenv
 import os
-from crypto_data import Crypto
-from crypto_chart import CryptoChart
-from discord_webhook import send_embed
+from crypto.crypto_data import Crypto
+from crypto.crypto_chart import CryptoChart
+from discord.discord_webhook import send_embed
 
 load_dotenv()
 

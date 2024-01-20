@@ -1,6 +1,6 @@
 import requests
 import json
-from utils import convert_datetime_to_string
+from utils.utils import convert_datetime_to_string
 
 
 def send_embed(webhook_url, crypto_data):
