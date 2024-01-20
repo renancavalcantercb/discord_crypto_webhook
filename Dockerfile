@@ -3,14 +3,13 @@ FROM python:3.11
 WORKDIR /app
 
 COPY requirements.txt .
-COPY .env .
-COPY main.py .
-COPY crypto_data.py .
-COPY crypto_chart.py .
-COPY discord_webhook.py .
 
 RUN echo "Installing dependencies..."
 RUN pip install -r requirements.txt
+
+COPY .env .
+COPY src/ ./src/
+COPY crontab .
 
 RUN echo "Setting up cron task..."
 RUN apt-get update && apt-get -y install cron
