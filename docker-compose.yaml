@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  crypto-bot:
+    build: .
+    environment:
+      - WEBHOOK_URL=${WEBHOOK_URL}
+    volumes:
+      - .:/app
