@@ -32,7 +32,7 @@ def send_embed(webhook_url, crypto_data):
     response = requests.post(webhook_url, data=json.dumps(data), headers=headers)
 
     if response.status_code == 204:
-        print("Mensagem embed enviada com sucesso")
+        print("Embed sent successfully")
     else:
-        print(f"Erro ao enviar mensagem embed: {response.status_code}")
+        print(f"Error sending embed: {response.status_code}")
         print(response.text)
