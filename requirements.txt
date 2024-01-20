@@ -1,0 +1,4 @@
+pycoingecko
+plotly
+kaleido
+python - dotenv
