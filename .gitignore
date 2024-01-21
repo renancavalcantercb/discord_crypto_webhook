@@ -1,5 +1,6 @@
 # folders to ignore
 __pycache__
 
-# files to ignore
+# extensions to ignore
 .env
+*.png
