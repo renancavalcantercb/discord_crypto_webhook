@@ -5,7 +5,7 @@ class LogManager:
     loggers = {}
 
     @classmethod
-    def get_logger(cls, name, level=logging.INFO, log_file="logs/app.log"):
+    def get_logger(cls, name, level=logging.DEBUG, log_file="log/app.log"):
         if name not in cls.loggers:
             logger = logging.getLogger(name)
             logger.setLevel(level)
