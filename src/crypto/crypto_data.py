@@ -1,7 +1,9 @@
 from pycoingecko import CoinGeckoAPI
+from utils.log_manager import LogManager
 import datetime
 
 cg = CoinGeckoAPI()
+logger = LogManager.get_logger(__name__)
 
 
 class Crypto:
@@ -22,9 +24,11 @@ class Crypto:
         return cg.get_price(ids=self.crypto_name, vs_currencies=self.currency)
 
     def get_market_chart(self):
+        logger.info(f"Getting market chart for {self.crypto_name}")
         chart_data = cg.get_coin_market_chart_by_id(
             id=self.crypto_name, vs_currency=self.currency, days=self.days
         )
+        logger.info(f"Got market chart for {self.crypto_name}")
         return self._transform_data(chart_data)
 
     def get_coin_info(self):

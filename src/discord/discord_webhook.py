@@ -1,6 +1,9 @@
 import requests
 import json
 from utils.utils import convert_datetime_to_string
+from utils.log_manager import LogManager
+
+logger = LogManager.get_logger(__name__)
 
 
 def send_embed(webhook_url, crypto_data):
@@ -32,7 +35,7 @@ def send_embed(webhook_url, crypto_data):
     response = requests.post(webhook_url, data=json.dumps(data), headers=headers)
 
     if response.status_code == 204:
-        print("Embed sent successfully")
+        logger.info(f"Embed sent successfully")
     else:
-        print(f"Error sending embed: {response.status_code}")
-        print(response.text)
+        logger.error(f"Error sending embed: {response.status_code}")
+        logger.error(f"Response: {response.text}")

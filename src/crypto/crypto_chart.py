@@ -1,6 +1,9 @@
 import os
 import plotly.graph_objects as go
 from utils.utils import ensure_tmp_folder_exists
+from utils.log_manager import LogManager
+
+logger = LogManager.get_logger(__name__)
 
 
 class CryptoChart:
@@ -27,8 +30,9 @@ class CryptoChart:
         return fig
 
     def _save_chart_as_image(self, filename):
+        logger.info(f"Starting to save chart as image")
         fig = self._create_chart()
         ensure_tmp_folder_exists()
         file_path = os.path.join(self.tmp_folder, filename)
         fig.write_image(file_path)
-        print(f"Chart saved as {file_path}")
+        logger.info(f"Chart saved as image at {file_path}")
